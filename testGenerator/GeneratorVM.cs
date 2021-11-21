@@ -19,5 +19,6 @@ namespace testGenerator
         }
 
         public abstract void Next();
+        public abstract void Reset();
     }
 }

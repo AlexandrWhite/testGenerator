@@ -15,13 +15,14 @@
     </Window.DataContext>
 
     <Window.Resources>
+        <grCov:SequenceUniqueConverter x:Key="SequenceUniqueConverter"/>
         <grCov:PointGraphConverter x:Key="PointGraphConverter"/>
         <grCov:ColumnGraphConverter x:Key="ColumnGraphConverter"/>
     </Window.Resources>
-  
-    
+
+
     <ScrollViewer VerticalScrollBarVisibility="Auto">
-        
+
         <StackPanel Margin="10">
 
 
@@ -33,7 +34,7 @@
                 </ComboBox.ItemTemplate>
             </ComboBox>
 
-         
+
             <UserControl Content="{Binding SelectedGenerator.GeneratorView}"/>
 
             <Grid>
@@ -41,7 +42,7 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
@@ -56,28 +57,28 @@
                         Minimum="0"
                         Maximum="10000"/>
             </Grid>
-            
+
 
             <Button Content="Сгенерировать" Click="Button_Click" Margin="5"/>
-            
+
             <!--<ProgressBar Height="10" Value="{Binding Progress, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>-->
-            
+
             <Expander Header="Элементы последовательности" Margin="5">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <ListView ItemsSource="{Binding Sequence}" AlternationCount="{Binding Sequence.Count}" MaxHeight="400"/>
-                  
+
                 </ScrollViewer>
             </Expander>
 
 
-          
+
 
             <WrapPanel Margin="5" HorizontalAlignment="Center">
- 
-                <oxy:Plot Width="600" Height="600" Title="Распределение элементов на плоскости">
-                   
-                    <oxy:Plot.Series>
-                        <oxy:LineSeries
+
+
+                <oxy:Plot Width="900" Height="600" Title="Распределение элементов на плоскости">
+
+                    <oxy:LineSeries
                             ItemsSource="{Binding Sequence, Converter={StaticResource PointGraphConverter}}"
                             Color="Black"
                             MarkerType="Circle"
@@ -85,17 +86,17 @@
                             MarkerSize="5"
                             LineStyle="None"
                             />
-                    </oxy:Plot.Series>
                 </oxy:Plot>
 
 
-                <oxy:Plot Title="Гистограмма" Width="600" Height="600" >
-                    <oxy:Plot.Series>
-                        <oxy:ColumnSeries ItemsSource="{Binding Sequence, Converter={StaticResource ColumnGraphConverter}}" />
-                    </oxy:Plot.Series>
+                <oxy:Plot Title="Гистограмма" Width="900" Height="600" HorizontalAlignment="Center">
+                    <oxy:Plot.Axes>
+                        <oxy:CategoryAxis ItemsSource="{Binding Sequence, Converter={StaticResource SequenceUniqueConverter}}"/>
+                    </oxy:Plot.Axes>
+                    <oxy:ColumnSeries ItemsSource="{Binding Sequence, Converter={StaticResource ColumnGraphConverter}}" />
                 </oxy:Plot>
-                
-                
+
+
 
                 <!--<oxy:Plot Height="400" Width="400">
                     <oxy:Plot.Axes>
@@ -104,15 +105,15 @@
                     </oxy:Plot.Axes>
                     <oxy:LineSeries ItemsSource="{Binding DataPoints}"/>
                 </oxy:Plot>-->
-            
-                
+
+
 
 
             </WrapPanel>
 
 
 
-           
+
         </StackPanel>
     </ScrollViewer>
 </Window>

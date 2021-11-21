@@ -106,8 +106,10 @@ namespace testGenerator
             ////bw.RunWorkerAsync();
 
             sequence.Clear();
+            selectedGenerator.GeneratorVM.Reset();
             for(int i = 0; i < MaxElementNumber; i++)
             {
+                if(i == 0) { Console.WriteLine(selectedGenerator.GeneratorVM.CurrentItem); }
                 sequence.Add(selectedGenerator.GeneratorVM.CurrentItem);
                 selectedGenerator.GeneratorVM.Next();
             }

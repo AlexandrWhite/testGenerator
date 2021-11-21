@@ -85,6 +85,7 @@
     <Compile Include="GeneratorVM.cs" />
     <Compile Include="GraphConverter\ColumnGraphConverter.cs" />
     <Compile Include="GraphConverter\PointGraphConverter.cs" />
+    <Compile Include="GraphConverter\SequenceUniqueConverter.cs" />
     <Compile Include="LinearGenerator\LinearGeneratorView.xaml.cs">
       <DependentUpon>LinearGeneratorView.xaml</DependentUpon>
     </Compile>
