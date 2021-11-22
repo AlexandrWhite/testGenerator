@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace testGenerator.LinearGenerator.Validaton
+namespace testGenerator.Validation
 {
     class ModGreatAndEqual2Rule : ValidationRule
     {

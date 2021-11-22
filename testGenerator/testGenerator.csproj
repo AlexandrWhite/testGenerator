@@ -69,10 +69,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FibAddGenerator\FibAddGeneratorVM.cs" />
+    <Compile Include="FibAddGenerator\FibAddView.xaml.cs">
+      <DependentUpon>FibAddView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StandartC_SharpGenerator\StandartCSharpVM.cs" />
     <Compile Include="StandartC_SharpGenerator\StandartGeneratorView.xaml.cs">
       <DependentUpon>StandartGeneratorView.xaml</DependentUpon>
     </Compile>
+    <Page Include="FibAddGenerator\FibAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LinearGenerator\LinearGeneratorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -94,7 +102,7 @@
       <DependentUpon>LinearGeneratorView.xaml</DependentUpon>
     </Compile>
     <Compile Include="LinearGenerator\LinearGeneratorVM.cs" />
-    <Compile Include="LinearGenerator\Validaton\ModGreatAndEqual2Rule.cs" />
+    <Compile Include="Validation\ModGreatAndEqual2Rule.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

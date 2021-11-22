@@ -72,6 +72,7 @@ namespace testGenerator
             sequence = new ObservableCollection<ulong>();
             generators.Add(new Generator("Линейный Конгруэнтный",new LinearGenerator.LinearGeneratorView()));
             generators.Add(new Generator("Стандартный генератор C#", new StandartC_SharpGenerator.StandartGeneratorView()));
+            generators.Add(new Generator("Аддитивный генератор Фибоначчи",new FibAddGenerator.FibAddView()));
             selectedGenerator = generators[0];
 
 

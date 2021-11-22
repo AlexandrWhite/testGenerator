@@ -9,13 +9,14 @@ namespace testGenerator.LinearGenerator
     class LinearGeneratorVM:GeneratorVM
     {
         ulong a, b, x0,mod;
+        
       
         public ulong A
         {
             get { return a; }
             set {
                 currentItem = x0%mod;
-                a = value%mod;
+                a = value;
                 OnPropertyChanged(nameof(A));
                 OnPropertyChanged(nameof(CurrentItem));
             }
@@ -26,7 +27,7 @@ namespace testGenerator.LinearGenerator
             get { return b; }
             set {
                 currentItem = x0%mod;
-                b = value%mod;
+                b = value;
                 OnPropertyChanged(nameof(B));
                 OnPropertyChanged(nameof(CurrentItem));
             }
@@ -36,9 +37,7 @@ namespace testGenerator.LinearGenerator
         {
             get { return x0; }
             set {
-                Console.WriteLine("sdsd");
-                Console.WriteLine(X0);
-                x0 = value%mod;
+                x0 = value;
                 currentItem = x0%mod;
                 OnPropertyChanged(nameof(x0));
                 OnPropertyChanged(nameof(CurrentItem));
@@ -57,8 +56,6 @@ namespace testGenerator.LinearGenerator
             }
         }
 
-
-
         public LinearGeneratorVM(ulong a,ulong b,ulong x0,ulong mod)
         {
             this.a = a;
@@ -68,10 +65,9 @@ namespace testGenerator.LinearGenerator
             this.currentItem = x0;
         }
 
-        public LinearGeneratorVM() { 
-            this.currentItem = x0; 
+        public LinearGeneratorVM() {
             mod = 2;
-          
+            currentItem = x0%mod;            
         }
        
         public override void Next()

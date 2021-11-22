@@ -11,14 +11,14 @@
         <local:StandartCSharpVM/>
     </UserControl.DataContext>
     
-    <Grid>
+    <Grid Margin="5">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="170"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="0" Text="Максимальное значение"  HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock Grid.Column="0" Text="Максимальное значение" VerticalAlignment="Center" TextWrapping="Wrap"/>
             <TextBox Grid.Column="1" Text="{Binding MaxValue}"/>
         </Grid>
     </Grid>
