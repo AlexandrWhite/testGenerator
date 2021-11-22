@@ -36,6 +36,7 @@ namespace testGenerator
             set
             {
                 selectedGenerator = value;
+                OnPropertyChanged(nameof(SelectedGenerator));
             }
         }
 
@@ -70,7 +71,7 @@ namespace testGenerator
             
             sequence = new ObservableCollection<ulong>();
             generators.Add(new Generator("Линейный Конгруэнтный",new LinearGenerator.LinearGeneratorView()));
-
+            generators.Add(new Generator("Стандартный генератор C#", new StandartC_SharpGenerator.StandartGeneratorView()));
             selectedGenerator = generators[0];
 
 

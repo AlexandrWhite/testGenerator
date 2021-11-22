@@ -26,8 +26,8 @@ namespace testGenerator.StandartC_SharpGenerator
         }
 
         public override void Reset()
-        {
-            rnd.
+        {           
+            
         }
     }
 }
