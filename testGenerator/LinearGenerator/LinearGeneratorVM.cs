@@ -15,7 +15,7 @@ namespace testGenerator.LinearGenerator
             get { return a; }
             set {
                 currentItem = x0%mod;
-                a = value;
+                a = value%mod;
                 OnPropertyChanged(nameof(A));
                 OnPropertyChanged(nameof(CurrentItem));
             }
@@ -26,7 +26,7 @@ namespace testGenerator.LinearGenerator
             get { return b; }
             set {
                 currentItem = x0%mod;
-                b = value;
+                b = value%mod;
                 OnPropertyChanged(nameof(B));
                 OnPropertyChanged(nameof(CurrentItem));
             }
@@ -38,7 +38,7 @@ namespace testGenerator.LinearGenerator
             set {
                 Console.WriteLine("sdsd");
                 Console.WriteLine(X0);
-                x0 = value;
+                x0 = value%mod;
                 currentItem = x0%mod;
                 OnPropertyChanged(nameof(x0));
                 OnPropertyChanged(nameof(CurrentItem));
