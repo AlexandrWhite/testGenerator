@@ -18,7 +18,7 @@ namespace testGenerator
         ObservableCollection<ulong> sequence;
         BackgroundWorker bw = new BackgroundWorker();
         List<Generator> generators = new List<Generator>();
-        int maxElementNumber = 10;
+        int maxElementNumber = 4;
 
        
 

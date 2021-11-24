@@ -73,6 +73,10 @@
     <Compile Include="FibAddGenerator\FibAddView.xaml.cs">
       <DependentUpon>FibAddView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GraphConverter\Bin1GraphConverter.cs" />
+    <Compile Include="GraphConverter\Bin2GraphConverter.cs" />
+    <Compile Include="GraphConverter\BinSeries1.cs" />
+    <Compile Include="GraphConverter\BinSeries2.cs" />
     <Compile Include="StandartC_SharpGenerator\StandartCSharpVM.cs" />
     <Compile Include="StandartC_SharpGenerator\StandartGeneratorView.xaml.cs">
       <DependentUpon>StandartGeneratorView.xaml</DependentUpon>

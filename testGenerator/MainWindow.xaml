@@ -8,7 +8,9 @@
         xmlns:grCov="clr-namespace:testGenerator.GraphConverter"
         xmlns:oxy="http://oxyplot.org/wpf"
         mc:Ignorable="d"
-        Title="Генератор случайных последовательностей" Height="450" Width="800">
+        Title="Генератор случайных последовательностей" 
+        Height="450" Width="800"
+        >
 
     <Window.DataContext>
         <local:MainWindowVM x:Name="vi"/>
@@ -18,6 +20,10 @@
         <grCov:SequenceUniqueConverter x:Key="SequenceUniqueConverter"/>
         <grCov:PointGraphConverter x:Key="PointGraphConverter"/>
         <grCov:ColumnGraphConverter x:Key="ColumnGraphConverter"/>
+        <grCov:BinSeries1 x:Key="BinSeries1Converter"/>
+        <grCov:Bin1GraphConverter x:Key="Bin1GraphConverter"/>
+        <grCov:BinSeries2 x:Key="Bin2Series"/>
+        <grCov:Bin2GraphConverter x:Key="Bin2GraphConverter"/>
     </Window.Resources>
 
 
@@ -55,7 +61,7 @@
                         TickFrequency="1"
                         Value="{Binding MaxElementNumber}"
                         Minimum="0"
-                        Maximum="10000"/>
+                        Maximum="10"/>
             </Grid>
 
 
@@ -98,13 +104,23 @@
 
 
 
-                <!--<oxy:Plot Height="400" Width="400">
+                <oxy:Plot Title="Гистограмма серий (1 бит)" Width="900" Height="600" HorizontalAlignment="Center">
                     <oxy:Plot.Axes>
-                        <oxy:LinearAxis Position="Left"/>
-                        <oxy:LinearAxis Position="Bottom"/>
+                        <oxy:CategoryAxis ItemsSource="{Binding Sequence, Converter={StaticResource BinSeries1Converter }}"/>
                     </oxy:Plot.Axes>
-                    <oxy:LineSeries ItemsSource="{Binding DataPoints}"/>
-                </oxy:Plot>-->
+                    <oxy:ColumnSeries ItemsSource="{Binding Sequence, Converter={StaticResource Bin1GraphConverter}}" />
+                </oxy:Plot>
+
+
+                <oxy:Plot Title="Гистограмма серий (2 бит)" Width="900" Height="600" HorizontalAlignment="Center">
+                    <oxy:Plot.Axes>
+                        <oxy:CategoryAxis ItemsSource="{Binding Sequence, Converter={StaticResource Bin2Series }}"/>
+                    </oxy:Plot.Axes>
+                    <oxy:ColumnSeries ItemsSource="{Binding Sequence, Converter={StaticResource Bin2GraphConverter}}" />
+                </oxy:Plot>
+
+                <ListView ItemsSource="{Binding Sequence, Converter={StaticResource Bin1GraphConverter}}" MaxHeight="400"/>
+
 
 
 
