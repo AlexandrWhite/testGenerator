@@ -78,7 +78,7 @@ namespace testGenerator.LinearGenerator
 
         public override void Reset()
         {
-            currentItem = X0;
+            currentItem = X0%mod;
         }
 
     }
