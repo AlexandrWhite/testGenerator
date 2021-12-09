@@ -42,7 +42,7 @@ namespace testGenerator.GraphConverter
 
             for(int i = 0; i < binStr.Count()-1; i++)
             {
-                Console.WriteLine($"{binStr[i]} {binStr[i+1]}\n");
+                
                 if (binStr[i] == 0 && binStr[i+1] == 0) { cnt00++; }
                 if (binStr[i] == 0 && binStr[i+1] == 1) { cnt01++; }
                 if (binStr[i] == 1 && binStr[i+1] == 0) { cnt10++; }

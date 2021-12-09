@@ -60,8 +60,8 @@
                         Margin="5" IsSnapToTickEnabled="True"
                         TickFrequency="1"
                         Value="{Binding MaxElementNumber}"
-                        Minimum="0"
-                        Maximum="10"/>
+                        Minimum="5"
+                        Maximum="100000"/>
             </Grid>
 
 
@@ -82,7 +82,7 @@
             <WrapPanel Margin="5" HorizontalAlignment="Center">
 
 
-                <oxy:Plot Width="900" Height="600" Title="Распределение элементов на плоскости">
+                <oxy:Plot Width="500" Height="500" Title="Распределение элементов на плоскости">
 
                     <oxy:LineSeries
                             ItemsSource="{Binding Sequence, Converter={StaticResource PointGraphConverter}}"
@@ -95,7 +95,7 @@
                 </oxy:Plot>
 
 
-                <oxy:Plot Title="Гистограмма" Width="900" Height="600" HorizontalAlignment="Center">
+                <oxy:Plot Title="Гистограмма" Width="500" Height="500" HorizontalAlignment="Center">
                     <oxy:Plot.Axes>
                         <oxy:CategoryAxis ItemsSource="{Binding Sequence, Converter={StaticResource SequenceUniqueConverter}}"/>
                     </oxy:Plot.Axes>
@@ -104,7 +104,7 @@
 
 
 
-                <oxy:Plot Title="Гистограмма серий (1 бит)" Width="900" Height="600" HorizontalAlignment="Center">
+                <oxy:Plot Title="Гистограмма серий (1 бит)" Width="500" Height="500" HorizontalAlignment="Center">
                     <oxy:Plot.Axes>
                         <oxy:CategoryAxis ItemsSource="{Binding Sequence, Converter={StaticResource BinSeries1Converter }}"/>
                     </oxy:Plot.Axes>
@@ -112,16 +112,14 @@
                 </oxy:Plot>
 
 
-                <oxy:Plot Title="Гистограмма серий (2 бит)" Width="900" Height="600" HorizontalAlignment="Center">
+                <oxy:Plot Title="Гистограмма серий (2 бит)" Width="500" Height="500" HorizontalAlignment="Center">
                     <oxy:Plot.Axes>
                         <oxy:CategoryAxis ItemsSource="{Binding Sequence, Converter={StaticResource Bin2Series }}"/>
                     </oxy:Plot.Axes>
                     <oxy:ColumnSeries ItemsSource="{Binding Sequence, Converter={StaticResource Bin2GraphConverter}}" />
                 </oxy:Plot>
 
-                <ListView ItemsSource="{Binding Sequence, Converter={StaticResource Bin1GraphConverter}}" MaxHeight="400"/>
-
-
+                
 
 
 
