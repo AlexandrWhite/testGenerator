@@ -77,6 +77,10 @@
     <Compile Include="GraphConverter\Bin2GraphConverter.cs" />
     <Compile Include="GraphConverter\BinSeries1.cs" />
     <Compile Include="GraphConverter\BinSeries2.cs" />
+    <Compile Include="LinearMatrixGenerator\LinearMatrixView.xaml.cs">
+      <DependentUpon>LinearMatrixView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LinearMatrixGenerator\LinearMatrixVM.cs" />
     <Compile Include="StandartC_SharpGenerator\StandartCSharpVM.cs" />
     <Compile Include="StandartC_SharpGenerator\StandartGeneratorView.xaml.cs">
       <DependentUpon>StandartGeneratorView.xaml</DependentUpon>
@@ -87,6 +91,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LinearGenerator\LinearGeneratorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LinearMatrixGenerator\LinearMatrixView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -145,8 +153,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MatrixGenerator\LinearMatrixGenerator\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

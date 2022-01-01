@@ -62,7 +62,7 @@ namespace testGenerator.LinearGenerator
             this.b = b;
             this.mod = mod;
             this.x0 = x0%mod;
-            this.currentItem = x0;
+            currentItem = x0;
         }
 
         public LinearGeneratorVM() {
