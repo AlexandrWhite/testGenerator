@@ -29,5 +29,10 @@ namespace testGenerator.StandartC_SharpGenerator
         {           
             
         }
+
+        protected override void CurrentItemToVisualCurrentItem()
+        {
+            visualCurrentItem = currentItem;
+        }
     }
 }

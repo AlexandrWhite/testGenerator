@@ -16,6 +16,7 @@ namespace testGenerator
     {
         Generator selectedGenerator;
         ObservableCollection<object> sequence;
+        ObservableCollection<object> visualSequence;
         BackgroundWorker bw = new BackgroundWorker();
         List<Generator> generators = new List<Generator>();
         int maxElementNumber = 4;
@@ -45,6 +46,11 @@ namespace testGenerator
             get { return sequence; }
         }
 
+        public ObservableCollection<object> VisualSequence
+        {
+            get { return visualSequence; }
+        }
+
 
         public BackgroundWorker BackgroundWorker
         {
@@ -70,6 +76,7 @@ namespace testGenerator
         {
             
             sequence = new ObservableCollection<object>();
+            visualSequence = new ObservableCollection<object>();
             generators.Add(new Generator("Линейный Конгруэнтный",new LinearGenerator.LinearGeneratorView()));
             generators.Add(new Generator("Стандартный генератор C#", new StandartC_SharpGenerator.StandartGeneratorView()));
             generators.Add(new Generator("Аддитивный генератор Фибоначчи",new FibAddGenerator.FibAddView()));
@@ -116,9 +123,21 @@ namespace testGenerator
                 sequence.Add(selectedGenerator.GeneratorVM.CurrentItem);
                 selectedGenerator.GeneratorVM.Next();
             }
+
+
+            visualSequence.Clear();
+            selectedGenerator.GeneratorVM.Reset();
+            for (int i = 0; i < MaxElementNumber; i++)
+            {
+                if (i == 0) { Console.WriteLine(selectedGenerator.GeneratorVM.VisualCurrentItem); }
+                visualSequence.Add(selectedGenerator.GeneratorVM.VisualCurrentItem);
+                selectedGenerator.GeneratorVM.Next();
+            }
+
             OnPropertyChanged(nameof(Sequence));
-            
-          
+            OnPropertyChanged(nameof(VisualSequence));
+
+
         }
 
        

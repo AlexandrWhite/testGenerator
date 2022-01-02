@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace testGenerator.LinearMatrixGenerator
 {
@@ -13,12 +14,16 @@ namespace testGenerator.LinearMatrixGenerator
         DataTable x0;
         DataTable b;
 
+        int p; 
+
         public LinearMatrixVM()
         {
             a = new DataTable();
             x0 = new DataTable();
             b = new DataTable();
 
+            currentItem = x0;
+            p = 2;
 
             DataColumn dc = new DataColumn();
             dc.DataType = typeof(int);
@@ -49,15 +54,44 @@ namespace testGenerator.LinearMatrixGenerator
         public DataTable A { get { return a; } }
         public DataTable B { get { return b; } }
         public DataTable X0 { get { return x0; } }
+        public int P
+        {
+            get { return p; }
+            set { p = value; }
+        }
+
 
         public override void Next()
-        {
-            throw new NotImplementedException();
+        {           
+            currentItem = 10;                    
+            OnPropertyChanged(nameof(currentItem));
+            OnPropertyChanged(nameof(VisualCurrentItem));
         }
 
         public override void Reset()
         {
-            throw new NotImplementedException();
+            currentItem = 10;
+            OnPropertyChanged(nameof(currentItem));
+            OnPropertyChanged(nameof(VisualCurrentItem));
+        }
+
+        protected override void CurrentItemToVisualCurrentItem()
+        {
+            StackPanel sp = new StackPanel();
+            sp.Orientation = Orientation.Horizontal;
+
+            DataGrid dg = new DataGrid();
+            dg.AutoGenerateColumns = true;
+            dg.ItemsSource = x0.AsDataView();
+            dg.CanUserAddRows = false;
+            TextBlock tb = new TextBlock();
+            tb.Text = "111";
+            tb.Margin = new System.Windows.Thickness(20, 20, 20, 20);
+            tb.VerticalAlignment = System.Windows.VerticalAlignment.Center;
+
+            sp.Children.Add(dg);
+            sp.Children.Add(tb);
+            visualCurrentItem = sp;
         }
     }
 }

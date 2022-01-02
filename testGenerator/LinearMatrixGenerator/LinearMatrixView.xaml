@@ -24,7 +24,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="p" Grid.Column="0"/>
-            <TextBox Grid.Column="1"/>
+            <TextBox Grid.Column="1" Text="{Binding P, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
         
         <TabControl Grid.Row="1">

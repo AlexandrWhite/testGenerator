@@ -12,6 +12,9 @@ namespace testGenerator
         protected object currentItem;
         public object CurrentItem { get { return currentItem; } }
 
+        protected object visualCurrentItem;
+        public object VisualCurrentItem { get { CurrentItemToVisualCurrentItem(); return visualCurrentItem; } }
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string prop)
         {
@@ -20,5 +23,6 @@ namespace testGenerator
 
         public abstract void Next();
         public abstract void Reset();
+        protected abstract void CurrentItemToVisualCurrentItem();
     }
 }

@@ -81,5 +81,9 @@ namespace testGenerator.LinearGenerator
             currentItem = X0%mod;
         }
 
+        protected override void CurrentItemToVisualCurrentItem()
+        {
+            visualCurrentItem = currentItem;
+        }
     }
 }

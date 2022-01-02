@@ -67,5 +67,10 @@ namespace testGenerator.FibAddGenerator
             currentItem = X0%mod;
             count = 0;
         }
+
+        protected override void CurrentItemToVisualCurrentItem()
+        {
+            visualCurrentItem = currentItem;
+        }
     }
 }

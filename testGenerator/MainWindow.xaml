@@ -60,8 +60,8 @@
                         Margin="5" IsSnapToTickEnabled="True"
                         TickFrequency="1"
                         Value="{Binding MaxElementNumber}"
-                        Minimum="5"
-                        Maximum="100000"/>
+                        Minimum="1"
+                        Maximum="10"/>
             </Grid>
 
 
@@ -71,7 +71,7 @@
 
             <Expander Header="Элементы последовательности" Margin="5">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView ItemsSource="{Binding Sequence}" AlternationCount="{Binding Sequence.Count}" MaxHeight="400"/>
+                    <ListView ItemsSource="{Binding VisualSequence}" AlternationCount="{Binding Sequence.Count}" MaxHeight="400"/>
 
                 </ScrollViewer>
             </Expander>
