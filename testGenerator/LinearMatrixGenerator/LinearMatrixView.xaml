@@ -4,9 +4,39 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:testGenerator.LinearMatrixGenerator"
-             mc:Ignorable="d" 
+             xmlns:control="clr-namespace:testGenerator.Controls.MatrixControl"
+             mc:Ignorable="d"
+             Height="500"
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.DataContext>
+        <local:LinearMatrixVM/>
+    </UserControl.DataContext>
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="470"/>
+        </Grid.RowDefinitions>
+
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="p" Grid.Column="0"/>
+            <TextBox Grid.Column="1"/>
+        </Grid>
+        
+        <TabControl Grid.Row="1">
+            <TabItem Header="Матрица A">
+                <control:MatrixControl Matrix="{Binding A}"/>
+            </TabItem>
+            <TabItem Header="Матрица B">
+                <control:MatrixControl Matrix="{Binding B}"/>
+            </TabItem>
+            <TabItem Header="Матрица X0">
+                <control:MatrixControl Matrix="{Binding X0}"/>
+            </TabItem>
+        </TabControl>
     </Grid>
 </UserControl>

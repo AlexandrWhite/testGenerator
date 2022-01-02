@@ -69,6 +69,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\MatrixControl\MatrixControl.xaml.cs">
+      <DependentUpon>MatrixControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MatrixControl\MatrixControlVM.cs" />
     <Compile Include="FibAddGenerator\FibAddGeneratorVM.cs" />
     <Compile Include="FibAddGenerator\FibAddView.xaml.cs">
       <DependentUpon>FibAddView.xaml</DependentUpon>
@@ -86,6 +90,10 @@
       <DependentUpon>StandartGeneratorView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Validation\PositiveIntNumberRule.cs" />
+    <Page Include="Controls\MatrixControl\MatrixControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FibAddGenerator\FibAddView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

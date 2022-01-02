@@ -15,7 +15,7 @@ namespace testGenerator
     class MainWindowVM : INotifyPropertyChanged
     {
         Generator selectedGenerator;
-        ObservableCollection<ulong> sequence;
+        ObservableCollection<object> sequence;
         BackgroundWorker bw = new BackgroundWorker();
         List<Generator> generators = new List<Generator>();
         int maxElementNumber = 4;
@@ -40,7 +40,7 @@ namespace testGenerator
             }
         }
 
-        public ObservableCollection<ulong> Sequence
+        public ObservableCollection<object> Sequence
         {
             get { return sequence; }
         }
@@ -69,10 +69,11 @@ namespace testGenerator
         public MainWindowVM()
         {
             
-            sequence = new ObservableCollection<ulong>();
+            sequence = new ObservableCollection<object>();
             generators.Add(new Generator("Линейный Конгруэнтный",new LinearGenerator.LinearGeneratorView()));
             generators.Add(new Generator("Стандартный генератор C#", new StandartC_SharpGenerator.StandartGeneratorView()));
             generators.Add(new Generator("Аддитивный генератор Фибоначчи",new FibAddGenerator.FibAddView()));
+            generators.Add(new Generator("Матричный линейно конгруэнтный генератор", new LinearMatrixGenerator.LinearMatrixView()));
             selectedGenerator = generators[0];
 
 

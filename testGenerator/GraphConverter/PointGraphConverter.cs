@@ -13,6 +13,7 @@ namespace testGenerator.GraphConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            Console.WriteLine(value);
             ObservableCollection<ulong> data =  value as ObservableCollection<ulong>;
             ObservableCollection<DataPoint> points = new ObservableCollection<DataPoint>();
 

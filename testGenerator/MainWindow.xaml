@@ -79,7 +79,7 @@
 
 
 
-            <WrapPanel Margin="5" HorizontalAlignment="Center">
+            <!--<WrapPanel Margin="5" HorizontalAlignment="Center">
 
 
                 <oxy:Plot Width="500" Height="500" Title="Распределение элементов на плоскости">
@@ -123,7 +123,7 @@
 
 
 
-            </WrapPanel>
+            </WrapPanel>-->
 
 
 

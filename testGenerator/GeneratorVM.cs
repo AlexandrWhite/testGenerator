@@ -9,8 +9,8 @@ namespace testGenerator
 {
     abstract class GeneratorVM:INotifyPropertyChanged
     {
-        protected ulong currentItem;
-        public ulong CurrentItem { get { return currentItem; } }
+        protected object currentItem;
+        public object CurrentItem { get { return currentItem; } }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string prop)

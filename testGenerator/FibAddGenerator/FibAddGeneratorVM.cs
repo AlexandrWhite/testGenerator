@@ -50,8 +50,8 @@ namespace testGenerator.FibAddGenerator
                 return;
             }
 
-            ulong t = currentItem;
-            currentItem = (currentItem + lastItem) % mod;
+            ulong t = (ulong)currentItem;
+            currentItem = ((ulong)currentItem + lastItem) % mod;
             lastItem = t;
             count++;
         }

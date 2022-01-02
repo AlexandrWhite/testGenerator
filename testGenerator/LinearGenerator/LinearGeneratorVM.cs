@@ -72,7 +72,7 @@ namespace testGenerator.LinearGenerator
        
         public override void Next()
         {
-            currentItem = (a * currentItem + b)%mod;          
+            currentItem = (a * (ulong)currentItem + b)%mod;          
             OnPropertyChanged(nameof(currentItem));
         }
 
