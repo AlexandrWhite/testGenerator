@@ -10,12 +10,11 @@ namespace testGenerator.Controls.MatrixControl
 {
     class MatrixControlVM : INotifyPropertyChanged
     {
-        DataTable mx = new DataTable();
+        Matrix mx = new Matrix(1,1);
 
         public MatrixControlVM()
         {
-            AddCol();
-            AddRow();
+            
         }
 
 

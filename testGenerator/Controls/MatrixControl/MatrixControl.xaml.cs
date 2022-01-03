@@ -28,73 +28,39 @@ namespace testGenerator.Controls.MatrixControl
 
 
 
-        public DataTable Matrix
+        public Matrix MatrixData
         {
-            get { return (DataTable)GetValue(MatrixProperty); }
+            get { return (Matrix)GetValue(MatrixProperty); }
             set { SetValue(MatrixProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for Matrix.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty MatrixProperty =
-            DependencyProperty.Register("Matrix", typeof(DataTable), typeof(MatrixControl), new PropertyMetadata(null));
+            DependencyProperty.Register("MatrixData", typeof(Matrix), typeof(MatrixControl), new PropertyMetadata(null));
 
 
         private void MatrixDataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
         {
             e.Row.Header = e.Row.GetIndex().ToString();
-        }
-
-
-        public void AddRow()
-        {
-            
-            DataRow mr = Matrix.NewRow();
-            Matrix.Rows.Add(mr);
-        }
-
-        public void AddCol()
-        {
-          
-            DataColumn dc = new DataColumn();
-            dc.DataType = typeof(int);
-            dc.DefaultValue = 0;
-            dc.ColumnName = Matrix.Columns.Count.ToString();
-            Matrix.Columns.Add(dc);
-            MatrixDataGrid.ItemsSource = Matrix.AsDataView();
-        }
-
-        public void RemoveRow()
-        {
-            if (Matrix.Rows.Count > 1)
-            {
-                Matrix.Rows.Remove(Matrix.Rows[Matrix.Rows.Count - 1]);
-            }
-        }
-
-        public void RemoveColumn()
-        {
-            if (Matrix.Columns.Count > 1)
-            {                
-                Matrix.Columns.Remove(Matrix.Columns[Matrix.Columns.Count - 1]);
-                MatrixDataGrid.ItemsSource = Matrix.AsDataView();
-            }
-        }
+        }         
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {           
-            AddRow();
-            AddCol();          
+            MatrixData.AddRow();
+            MatrixData.AddCol();
+            MatrixDataGrid.ItemsSource = MatrixData.AsDataView();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            RemoveRow();
-            RemoveColumn();           
+            MatrixData.RemoveRow();
+            MatrixData.RemoveColumn();
+            MatrixDataGrid.ItemsSource = MatrixData.AsDataView();
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {         
-            MatrixDataGrid.ItemsSource = Matrix.AsDataView();
+            MatrixDataGrid.ItemsSource = MatrixData.AsDataView();
         }
     }
 }

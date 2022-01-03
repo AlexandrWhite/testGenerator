@@ -17,6 +17,7 @@ namespace testGenerator.GraphConverter
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             ObservableCollection<ulong> data = value as ObservableCollection<ulong>;
+            if (data == null) { return null; }
             List<ColumnItem> items = new List<ColumnItem>();
             List<int> binStr = new List<int>();
 

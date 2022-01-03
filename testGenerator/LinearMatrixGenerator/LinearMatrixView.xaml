@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:testGenerator.LinearMatrixGenerator"
              xmlns:control="clr-namespace:testGenerator.Controls.MatrixControl"
              mc:Ignorable="d"
-             Height="500"
+             Height="600"
              d:DesignHeight="450" d:DesignWidth="800">
 
     <UserControl.DataContext>
@@ -16,6 +16,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="470"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
         <Grid Margin="5">
@@ -29,14 +30,24 @@
         
         <TabControl Grid.Row="1">
             <TabItem Header="Матрица A">
-                <control:MatrixControl Matrix="{Binding A}"/>
+                <control:MatrixControl MatrixData="{Binding A}"/>
             </TabItem>
             <TabItem Header="Матрица B">
-                <control:MatrixControl Matrix="{Binding B}"/>
+                <control:MatrixControl MatrixData="{Binding B}"/>
             </TabItem>
             <TabItem Header="Матрица X0">
-                <control:MatrixControl Matrix="{Binding X0}"/>
+                <control:MatrixControl MatrixData="{Binding X0}"/>
             </TabItem>
         </TabControl>
+
+        <!--<Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" Text="1010"/>
+            <DataGrid/>
+        </Grid>-->
+        
     </Grid>
 </UserControl>

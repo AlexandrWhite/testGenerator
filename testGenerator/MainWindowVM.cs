@@ -80,7 +80,7 @@ namespace testGenerator
             generators.Add(new Generator("Линейный Конгруэнтный",new LinearGenerator.LinearGeneratorView()));
             generators.Add(new Generator("Стандартный генератор C#", new StandartC_SharpGenerator.StandartGeneratorView()));
             generators.Add(new Generator("Аддитивный генератор Фибоначчи",new FibAddGenerator.FibAddView()));
-            generators.Add(new Generator("Матричный линейно конгруэнтный генератор", new LinearMatrixGenerator.LinearMatrixView()));
+            //generators.Add(new Generator("Матричный линейно конгруэнтный генератор", new LinearMatrixGenerator.LinearMatrixView()));
             selectedGenerator = generators[0];
 
 

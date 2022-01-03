@@ -84,7 +84,10 @@
     <Compile Include="LinearMatrixGenerator\LinearMatrixView.xaml.cs">
       <DependentUpon>LinearMatrixView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LinearMatrixGenerator\LinearMatrixVM.cs" />
+    <Compile Include="LinearMatrixVM.cs" />
+    <Compile Include="Matrix.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="StandartC_SharpGenerator\StandartCSharpVM.cs" />
     <Compile Include="StandartC_SharpGenerator\StandartGeneratorView.xaml.cs">
       <DependentUpon>StandartGeneratorView.xaml</DependentUpon>

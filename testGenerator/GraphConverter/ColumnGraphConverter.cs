@@ -17,6 +17,7 @@ namespace testGenerator.GraphConverter
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             ObservableCollection<ulong> data = value as ObservableCollection<ulong>;
+            if(data == null) { return null; }
             ObservableCollection<ulong> unique_data = new ObservableCollection<ulong>(data.Distinct());
 
             List<ColumnItem> items = new List<ColumnItem>();

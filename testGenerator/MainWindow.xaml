@@ -61,7 +61,7 @@
                         TickFrequency="1"
                         Value="{Binding MaxElementNumber}"
                         Minimum="1"
-                        Maximum="10"/>
+                        Maximum="100"/>
             </Grid>
 
 
@@ -71,7 +71,7 @@
 
             <Expander Header="Элементы последовательности" Margin="5">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView ItemsSource="{Binding VisualSequence}" AlternationCount="{Binding Sequence.Count}" MaxHeight="400"/>
+                    <ListView ItemsSource="{Binding VisualSequence}" AlternationCount="{Binding Sequence.Count}" MaxHeight="200"/>
 
                 </ScrollViewer>
             </Expander>

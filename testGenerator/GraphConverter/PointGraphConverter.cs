@@ -13,9 +13,13 @@ namespace testGenerator.GraphConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            Console.WriteLine(value);
+            
+            
+
             ObservableCollection<ulong> data =  value as ObservableCollection<ulong>;
             ObservableCollection<DataPoint> points = new ObservableCollection<DataPoint>();
+
+            if (data == null) { return null; }
 
             int size = (data.Count % 2 == 0) ? data.Count : data.Count - 1;
 
